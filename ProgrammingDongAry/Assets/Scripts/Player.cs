@@ -30,19 +30,20 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.C))
         {
-            if(Physics2D.Raycast(transform.position,Vector2.right, 2, monsterLayer)&& isPlayerWatchingRight)
+            if (Physics2D.Raycast(transform.position, Vector2.right, 2, monsterLayer) && isPlayerWatchingRight)
             {
                 Debug.DrawRay(transform.position, Vector2.right * 2, Color.red);
             }
-            if(Physics2D.Raycast(transform.position,Vector2.left, 2, monsterLayer) && isPlayerWatchingRight)
+            if (Physics2D.Raycast(transform.position,Vector2.left, 2, monsterLayer) && isPlayerWatchingRight)
             {
                 Debug.DrawRay(transform.position, Vector2.left * 2, Color.red);
             }
         }
         if (Input.GetAxis("Horizontal")>0)
         {
-            isPlayerWatchingRight = false;
+            isPlayerWatchingRight = true;
             IMG.flipX = false;
+            
         }
         if(Input.GetAxis("Horizontal")<0)
         {
